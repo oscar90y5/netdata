@@ -1,0 +1,8 @@
+.env.discovery
+.env.servidor-gratis-aws
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
