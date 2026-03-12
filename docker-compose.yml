@@ -3,6 +3,7 @@ services:
     image: netdata/netdata:stable
     hostname: ${NETDATA_HOSTNAME}
     pid: host
+    userns_mode: host
     cap_add:
       - SYS_PTRACE
       - SYS_ADMIN
