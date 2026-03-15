@@ -29,22 +29,9 @@ services:
       options:
         max-size: 10m
         max-file: "1"
-    networks:
-      - proxy
-    labels:
-      - traefik.enable=true
-      - traefik.http.routers.netdata.rule=Host(`${NETDATA_DOMAIN}`)
-      - traefik.http.routers.netdata.entrypoints=websecure
-      - traefik.http.routers.netdata.tls.certresolver=letsencrypt
-      - traefik.http.services.netdata.loadbalancer.server.port=19999
-      - traefik.http.routers.netdata.middlewares=secure-headers@file
     restart: unless-stopped
 
 volumes:
   netdataconfig:
   netdatalib:
   netdatacache:
-
-networks:
-  proxy:
-    external: true
